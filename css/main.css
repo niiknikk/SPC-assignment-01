@@ -153,7 +153,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-/*   padding: 2rem; */
 }
 
 .header-overlay {
@@ -221,6 +220,12 @@ a {
   width: 500px;
 }
 
+@media only screen and (max-width: 75em) {
+  .header-img svg {
+    width: 400px;
+  }
+}
+
 @media only screen and (max-width: 56.25em) {
   .header-img svg {
     width: 80%;
@@ -252,6 +257,12 @@ a {
   padding: 4rem 0;
   border-radius: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .form-hero {
+    width: 95%;
+  }
 }
 
 .form-container {
