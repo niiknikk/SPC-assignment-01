@@ -166,26 +166,6 @@ a {
   margin-bottom: 1rem;
 }
 
-.header-overlay::before, .header-overlay::after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 80%;
-  height: 33.33333%;
-  opacity: 0.3;
-  filter: blur(15px);
-}
-
-.header-overlay::before {
-  background: var(--color-1);
-  right: 0;
-}
-
-.header-overlay::after {
-  background: var(--color-2);
-  bottom: 0;
-}
-
 .header-container {
   width: 80%;
   height: 100%;
@@ -203,6 +183,7 @@ a {
 
 @media only screen and (max-width: 37.5em) {
   .header-container {
+    padding: 0;
     flex-direction: column;
     width: 100%;
   }
@@ -229,18 +210,25 @@ a {
   padding: 4rem;
 }
 
-.header-img img {
+@media only screen and (max-width: 37.5em) {
+  .header-img {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
+
+.header-img svg {
   width: 500px;
 }
 
 @media only screen and (max-width: 56.25em) {
-  .header-img img {
+  .header-img svg {
     width: 80%;
   }
 }
 
 @media only screen and (max-width: 37.5em) {
-  .header-img img {
+  .header-img svg {
     width: 100%;
   }
 }
@@ -256,7 +244,7 @@ a {
 }
 
 .form-hero {
-  width: 90%;
+  width: 70%;
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -264,20 +252,6 @@ a {
   padding: 4rem 0;
   border-radius: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.form-img {
-  padding-left: 2rem;
-}
-
-.form-img img {
-  width: 500px;
-}
-
-@media only screen and (max-width: 75em) {
-  .form-img img {
-    display: none;
-  }
 }
 
 .form-container {
@@ -495,5 +469,172 @@ textarea:-webkit-autofill:focus {
   justify-content: center;
   align-items: center;
   background-color: #fff;
+}
+
+#star {
+  animation: star 2.5s linear infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#bulb {
+  animation: bulb 2s linear infinite alternate;
+}
+
+#path202, #path16, #path18, #path204, #path50, #path116 {
+  animation: path 3s linear 0s infinite alternate;
+}
+
+#hat {
+  animation: hat-wobble 2s linear 2s infinite alternate forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#apple {
+  animation: apple 2s linear 0s infinite alternate-reverse forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#mail {
+  animation: mail 1s linear 0s infinite alternate-reverse forwards;
+}
+
+#contact, #notebook {
+  animation: contact 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite alternate both;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#file {
+  animation: flip-file 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite alternate both;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#certificate {
+  animation: shake 2s linear infinite alternate forwards;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes star {
+  to {
+    transform: rotateZ(0deg);
+  }
+  from {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes bulb {
+  to {
+    opacity: 0;
+  }
+  from {
+    opacity: 1;
+  }
+}
+
+@keyframes path {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes hat-wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes apple {
+  0% {
+    opacity: .8;
+    transform: translateX(0px) rotate(-200deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(80px) rotate(0deg);
+  }
+}
+
+@keyframes mail {
+  0% {
+    transform: translate(-40px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes contact {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flip-file {
+  0% {
+    transform: translateZ(0) rotateY(0);
+  }
+  100% {
+    transform: translateZ(160px) rotateY(180deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-10deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
 }
 /*# sourceMappingURL=main.css.map */
